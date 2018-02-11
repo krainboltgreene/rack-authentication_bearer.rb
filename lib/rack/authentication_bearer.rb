@@ -32,7 +32,7 @@ module Rack
         return stack.call(state.merge(RACK_KEY => Rack::AuthenticationBearer::InvalidBearerTokenError))
       end
 
-      stack.call(state.merge(RACK_KEY => process.call(shared)))
+      stack.call(state.merge!(RACK_KEY => process.call(shared)))
     end
 
     private def shared
