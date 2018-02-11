@@ -40,7 +40,7 @@ module Rack
     end
 
     private def value
-      @value ||= state[AUTHENTICATION_KEY] || state[AUTHORIZATION_KEY]
+      state[AUTHENTICATION_KEY] || state[AUTHORIZATION_KEY]
     end
 
     private def present?
